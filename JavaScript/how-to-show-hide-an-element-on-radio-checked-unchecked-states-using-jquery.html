@@ -1,0 +1,48 @@
+<html>
+<body>
+        <h2>Fiche technique de production</h2>
+        <table width="100%" border="0">
+            <tr>
+              <td width="80%">Avons-nous par le passé produit des affiches que vous vous apprêtez à commander?</td>
+              <td width="20%"><label for="oui_reprint">Oui</label>
+              <input name="reprint_group" type="radio" id="oui_reprint" value="Oui">
+              <label for="non_newprint">Non</label>
+              <input type="radio" name="reprint_group" id="non_newprint" value="Non"></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" id="reprint_oui">
+          <tr>
+            <td width="80%">S'agit-il d'une réimpression sans changement?</td>
+            <td width="20%"><label for="oui_reprint">Oui</label>
+              <input type="radio" name="reprint_sans_changement" id="oui_reprint" value="Oui">
+              <label for="non_newprint">Non</label>
+              <input type="radio" name="reprint_sans_changement" id="non_newprint" value="Non"></td>
+          </tr>
+        </table>
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+     $("input[name$='reprint_group']").click(function(){
+
+     var radio_value = $(this).val();
+         console.log(radio_value);
+
+     if(radio_value=='Oui') {
+         $("#reprint_oui").show("slow");
+     }
+     else if(radio_value=='Non') {
+        $("#reprint_oui").hide("slow");
+        }
+       });
+
+     $("#reprint_oui").hide();
+
+     });
+</script>

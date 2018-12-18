@@ -1,0 +1,29 @@
+<html>
+<body>
+    <fieldset class="question">
+        <label for="coupon_question">Do you have a coupon?</label>
+        <input class="coupon_question" type="checkbox" name="coupon_question" value="1" onchange="valueChanged()"/>
+        <span class="item-text">Yes</span>
+    </fieldset>
+
+    <fieldset class="answer">
+        <label for="coupon_field">Your coupon:</label>
+        <input type="text" name="coupon_field" id="coupon_field"/>
+    </fieldset>
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(".answer").hide();
+    function valueChanged()
+    {
+        if($('.coupon_question').is(":checked"))
+            $(".answer").show();
+        else
+            $(".answer").hide();
+    }
+</script>
